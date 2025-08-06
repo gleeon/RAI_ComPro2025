@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 int main(){
     int num1, num2, result, menu;
@@ -5,7 +6,7 @@ int main(){
     scanf("%d", &num1);
     printf("Enter Num2 : ");
     scanf("%d", &num2);
-    printf("Calculator Menu : \n 1. +\n 2. -\n 3. *\n 4. /\n 5. %");
+    printf("Calculator Menu : \n 1. +\n 2. -\n 3. *\n 4. /\n 5. %%\n");
     printf("Choose menu: ");
     scanf("%d", &menu);
     switch(menu){
@@ -25,48 +26,42 @@ int main(){
             result = num1%num2;
             break;
     }
-    printf("Ans : Num 1 + Num 2 = %d", result);
+    printf("Ans : Num 1 + Num 2 = %d\n", result);
 }
-/*
+*/
 #include <stdio.h>
 int main(){
-    int num1;
-    int num2;
-    int menu;
-    int result;
-
+    int num1, num2, menu, result;
 
     printf("Enter Num1: ");
     scanf("%d", &num1);
+
     printf("Enter Num2: ");
     scanf("%d", &num2);
+
     printf("Calculator menu:\n1. +\n2. -\n3. *\n4. /\n5. %% \n Choose menu: ");
     scanf("%d", &menu);
   
-
-
-    //Menu
     if(menu == 1){
         result = num1 + num2;
-        printf("%d + %d = %d",num1,num2,result);
+        printf("Ans: Num1 + Num2 =  %d\n",result);
     }
     
     if(menu == 2){
         result = num1 - num2;
-        printf("%d - %d = %d",num1,num2,result);
+        printf("Ans: Num1 - Num2 =  %d\n",result);
     }
     if(menu == 3){
         result = num1 * num2;
-        printf("%d * %d = %d",num1,num2,result);
+        printf("Ans: Num1 * Num2 =  %d\n",result);
     }
     if(menu == 4){
         result = num1 / num2;
-        printf("%d / %d = %d",num1,num2,result);
+        printf("Ans: Num1 / Num2 =  %d\n",result);
     }
     if(menu == 5){
         result = num1 + num2;
-        printf("%d % %d = %d",num1,num2,result);
+        printf("Ans: Num1 %% Num2 = %d\n",result);
     }
 }
 
-*/
