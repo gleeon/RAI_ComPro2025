@@ -28,10 +28,24 @@ int main()
 
 
     for(i=0; i<n; i++){
-        rv[i] = 0
-        rc[i] = 0
+        rv[i] = 0;
+        rc[i] = 0;
     }
-    
+
+    for(j=0; j<v; j++){
+        for(i=0; i<n; i++){
+            if(m[i]==rv[j]){
+                rc[j]++;
+                break;
+            }
+            if(rc[j]=0){
+                rv[j]=m[i];
+                printf("Added %d value into rv[%d]", m[i], j);
+                rc[j]++;
+            }
+        }
+    }
+    /*
     for(i=0; i<n; i++){
         for(j=0; j<n; j++){
             if(m[j]==rv[i]){
@@ -47,6 +61,7 @@ int main()
         }
         
     }
+    */
     // for(i=1; i<n; i++){
     //     for(j=0; j<v; j++){
     //         if(m[i]!=rv[j]){
@@ -75,9 +90,9 @@ int main()
     //         }
     //     }
     
-    for(i=0; i<v; i++){
-        rc[i] = 0;
-    }
+    //for(i=0; i<v; i++){
+    //    rc[i] = 0;
+    //}
     for(i=0; i<v; i++){
         
         printf("%d %d %d %d %d\n", rc[0], rc[1], rc[2], rc[3], rc[4]);
