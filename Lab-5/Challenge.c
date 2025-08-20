@@ -1,46 +1,37 @@
 #include <stdio.h>
-
 int main(){
-    int n;
+    int n, i, j, v, f;
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
     int m[n];
     printf("Enter %d integers:\n", n);
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         scanf("%d", &m[i]);
     }
 
-    // Arrays to store unique values and their frequencies
-    int rv[n]; // rv = repeated values
-    int rc[n]; // rc = repeated counts
-    int uniqueCount = 0;
+    int rv[n], rc[n]; 
+    v = 0;
 
-    for (int i = 0; i < n; i++) {
-        int found = 0;
-
-        // Check if m[i] already exists in rv
-        for (int j = 0; j < uniqueCount; j++) {
+    for ( i = 0; i < n; i++) {
+        f = 0;
+        for (j = 0; j < v; j++) {
             if (m[i] == rv[j]) {
                 rc[j]++;
-                found = 1;
+                f = 1;
                 break;
             }
         }
 
-        // If not found, add it to rv
-        if (!found) {
-            rv[uniqueCount] = m[i];
-            rc[uniqueCount] = 1;
-            uniqueCount++;
+        if (f!=1) {
+            rv[v] = m[i];
+            rc[v] = 1;
+            v++;
         }
     }
-
-    // Output the result
-    for (int i = 0; i < uniqueCount; i++) {
+    for (int i = 0; i < v; i++) {
         printf("Element %d occurs %d time(s)\n", rv[i], rc[i]);
     }
-
 }
 
     /*
