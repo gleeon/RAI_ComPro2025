@@ -9,13 +9,11 @@ int main(){
     } s[3];
 
     int ha = 0, h;
-    int bam, bae, bas, bah;
-    //struct g{}
+    float bam, bae, bas, bah;
     
-
     for(int i = 0; i<3; i++){
         printf("Enter name, ID, and 4 grades for student %d:\n", i+1);
-        scanf("%s %d %d %d %d %d", s[i].name, &s[i].id, &s[i].m, &s[i].e, &s[i].s, &s[i].h);
+        scanf("%s %d %f %f %f %f", s[i].name, &s[i].id, &s[i].m, &s[i].e, &s[i].s, &s[i].h);
 
         printf("\n");
         
@@ -35,38 +33,42 @@ int main(){
         bah += s[i].h;
     }
     //Find avg of each sub
-    float am = bam/4.00, ae = bae/4.00, as = bas/4.00, ah = bah/4.00;
+    float am,  ae, as, ah; 
+    am = bam/3.00;
+    ae = bae/3.00;
+    as = bas/3.00;
+    ah = bah/3.00;
 
     float ha1, ha2, fh;
-    char *hn1[10], *hn2[10], *fhn[10];
+    char *hn1, *hn2, *fhn;
 
     if(am>ae){
         ha1=am;
-        hn1[10] = "Math";
+        hn1 = "Math";
     }
     else{
         ha1=ae;
-        hn1[10] = "English";
+        hn1 = "English";
     }
 
     
     if(as>ah){
         ha2=as;
-        hn2[10] = "Science";
+        hn2 = "Science";
     }
     else{
         ha2=ah;
-        hn2[10] = "History";
+        hn2 = "History";
     }
 
     if(ha1>ha2){
         fh = ha1;
-        fhn[10] = hn1;
+        fhn = hn1;
 
     }
     else{
         fh = ha2;
-        fhn[10] = hn2;
+        fhn = hn2;
     }
 
     printf("Student Averages: \n");
