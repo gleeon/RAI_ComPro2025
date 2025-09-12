@@ -64,7 +64,6 @@ int main(){
     if(ha1>ha2){
         fh = ha1;
         fhn = hn1;
-
     }
     else{
         fh = ha2;
